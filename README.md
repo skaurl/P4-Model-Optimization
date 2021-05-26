@@ -21,8 +21,8 @@ f1-score가 기준 모델의 f1-score를 넘을 시 f1-score의 비중을 반으
 
 추가사항:  f1-score 계산에 성능적 하한을 두어서 채점된 f1-score가 0.5 미만일 경우, f1 항의 score는 1.0으로 고정됩니다.즉 f1-score를 0.0으로 반영합니다. 너무 낮은 f1-score를 방지하기 위함입니다. 이는 public, private 채점 시 모두 반영되므로, public에서는 0.5 이상이었던 f1-score가 private에서는 0.5보다 작은 경우가 있을 수 있으니, 주의해주세요!
 
-![9e4f96ba-7bf3-41c2-a1c3-1e6073a4ee0c](https://user-images.githubusercontent.com/55614265/119596464-28ed4e80-be1a-11eb-9656-ac62d18fa909.png)
-![9dd1bf2c-893a-420f-b2fd-852f0104a83d](https://user-images.githubusercontent.com/55614265/119596466-2b4fa880-be1a-11eb-9255-d42687d0cfb1.png)
+<p align="center"><img src="https://user-images.githubusercontent.com/55614265/119596464-28ed4e80-be1a-11eb-9656-ac62d18fa909.png"/></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/55614265/119596466-2b4fa880-be1a-11eb-9255-d42687d0cfb1.png"/></p>
 
 예시에서 낮은 score가 높은 등수를 갖게 됩니다.
 즉, 예시모델 1이 가장 좋은 모델을 만들었다고 판단됩니다.
