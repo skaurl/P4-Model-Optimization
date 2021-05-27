@@ -42,3 +42,40 @@ f1-score가 기준 모델의 f1-score를 넘을 시 f1-score의 비중을 반으
         - https://github.com/rwightman/pytorch-image-models/blob/23c18a33e4168dc7cb11439c1f9acd38dc8e9824/timm/models/ghostnet.py#L46
     - 허용 불가 예시
         - https://github.com/rwightman/pytorch-image-models/blob/a2727c1bf78ba0d7b5727f5f95e37fb7f8866b1f/timm/models/layers/std_conv.py#L14 // nn.Conv2d를 상속받고, Function conv2d를 사용
+
+# 학습 데이터 개요
+
+- Segmentation / Object detecion task 를 풀기 위해 제작된 COCO format의 재활용 쓰레기 데이터인 TACO 데이터를 사용합니다.
+- 단순한 Classification 문제로 설정하기 위해 TACO 데이터셋의 Bounding box를 crop 한 데이터를 사용했습니다.
+
+```
+├─train
+│  ├─Battery
+│  ├─Clothing
+│  ├─Glass
+│  ├─Metal
+│  ├─Paper
+│  ├─Paperpack
+│  ├─Plastic
+│  ├─Plasticbag
+│  └─Styrofoam
+└─val
+    ├─Battery
+    ├─Clothing
+    ├─Glass
+    ├─Metal
+    ├─Paper
+    ├─Paperpack
+    ├─Plastic
+    ├─Plasticbag
+    └─Styrofoam
+```
+
+train 폴더와 val 폴더에 들어있는 데이터는 모두 train 데이터로 필요에 따라 섞어서 사용하셔도 됩니다. train data는 9개의 카테고리로 분류되어 있고 총 32,599장의 .jpg format 이미지를 보유하고 있습니다. EDA 과정을 통해 알 수 있겠지만 현재 class별 데이터 수 차이가 상당히 크기 때문에 class imbalance문제를 잘 해결하는 것도 하나의 좋은 점수를 얻는 방법으로 볼 수 있습니다. 또한 이미지의 width와 height가 모두 제각각이기 때문에 data tranform 작업에서 각기 다른 크기의 이미지를 어떻게 처리할 지 고민하시는 작업도 점수에 유의미한 영향을 줄 것 같습니다.
+class 별 데이터 수와 sample image에 대한 정보는 아래 이미지를 통해 확인하실 수 있습니다.
+
+![pasted image 0](https://user-images.githubusercontent.com/55614265/119746787-3bc05b80-becc-11eb-94f6-59eb3bf044f2.png)
+
+train data를 무작위로 샘플링해서 그린 결과입니다.
+
+![pasted image 0 (1)](https://user-images.githubusercontent.com/55614265/119746800-41b63c80-becc-11eb-9188-674a00a2fa9d.png)
