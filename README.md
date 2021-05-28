@@ -79,3 +79,19 @@ class 별 데이터 수와 sample image에 대한 정보는 아래 이미지를 
 train data를 무작위로 샘플링해서 그린 결과입니다.
 
 ![pasted image 0 (1)](https://user-images.githubusercontent.com/55614265/119746800-41b63c80-becc-11eb-9188-674a00a2fa9d.png)
+
+# 평가 데이터 개요
+
+```
+├─test
+│  └─NoLabel
+```
+
+평가 데이터는 test/NoLabel 폴더 안에 있고 label 정보가 존재하지 않습니다. 
+평가데이터의 수는 총 8,159개로 그 중 4083개를 private으로, 4076개를 public으로 사용합니다.
+
+대회 제출 관련 주의사항
+- 비공개적으로 다른 참가자 팀과 코드 혹은 데이터를 공유하는 것은 허용되지 않습니다. (Private Sharing 금지)
+- 다만 공개적으로 토론 게시판 등을 통해 공유하는 것은 허용되니 참고 부탁드립니다.
+- 또한 상위권은 제출한 코드 검수가 진행될 예정입니다.
+
